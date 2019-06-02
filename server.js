@@ -5,8 +5,13 @@ const app = express();
 
 const PORT = 8080;
 
-app.get("/suvery", (req,res) => {
-    res.sendFile(__dirname, '')
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, './public/home.html'));
 });
+
+app.get("/survey", (req, res) => {
+    res.sendFile(path.join(__dirname, './public/survey.html'));
+});
+
 
 app.listen(PORT, console.log("Server started on " + PORT));
