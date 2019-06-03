@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>FriendFinder</title>
@@ -29,9 +30,9 @@
             </div>
             <hr>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 1</label>
+                <label for="questOne">Question 1</label>
                 <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questOne">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -40,9 +41,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 2</label>
+                <label for="questTwo">Question 2</label>
                 <h6>Generally speaking, you rely more on your experience than your imagination.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questTwo">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -51,10 +52,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 3</label>
+                <label for="questThree">Question 3</label>
                 <h6>You find it easy to stay relaxed and focused even when there is some pressure.
                 </h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questThree">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -63,9 +64,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 4</label>
+                <label for="questFour">Question 4</label>
                 <h6>You rarely do something just out of sheer curiosity.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questFour">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -74,10 +75,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 5</label>
+                <label for="questFive">Question 5</label>
                 <h6>People can rarely upset you.
                 </h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questFive">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -86,9 +87,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 6</label>
+                <label for="questSix">Question 6</label>
                 <h6>It is often difficult for you to relate to other people’s feelings.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questSix">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -97,10 +98,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 7</label>
+                <label for="questSeven">Question 7</label>
                 <h6>In a discussion, truth should be more important than people’s sensitivities.
                 </h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questSeven">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -109,10 +110,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 8</label>
+                <label for="questEight">Question 8</label>
                 <h6>You rarely get carried away by fantasies and ideas.
                 </h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questEight">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -121,10 +122,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 9</label>
+                <label for="questNine">Question 9</label>
                 <h6>You think that everyone’s views should be respected regardless of whether they are supported by
                     facts or not.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questNine">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -133,9 +134,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 10</label>
+                <label for="questTen">Question 10</label>
                 <h6>You feel more energetic after spending time with a group of people.</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="questTen">
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -143,10 +144,11 @@
                     <option>5 (Strongly Agree)</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+            <button type="button" id="subQuest" class="btn btn-primary btn-lg btn-block">Submit</button>
         </form>
         <hr>
     </div>
+    <script src="../app/data/friends.js"></script>
 </body>
 
 </html>
