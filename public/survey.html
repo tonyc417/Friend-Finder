@@ -146,8 +146,30 @@
             <button type="button" id="subQuest" class="btn btn-primary btn-lg btn-block">Submit</button>
         </form>
         <hr>
+        <a href="/app//data/friends.js">View Data</a>
     </div>
-    <script src="../app/data/friends.js"></script>
+    <script type="text/javascript">
+
+        $("#subQuest").on('click', (e) => {
+
+            var userAnswer = {
+                firstQuest: $("#questOne").val().trim(),
+                secQuest: $("#questOne").val().trim(),
+                thirdQuest: $("#questOne").val().trim(),
+                fourthQuest: $("#questOne").val().trim(),
+                fifthQuest: $("#questOne").val().trim(),
+                sixthQuest: $("#questOne").val().trim(),
+                sevenQuest: $("#questOne").val().trim(),
+                eightQuest: $("#questOne").val().trim(),
+                nineQuest: $("#questOne").val().trim(),
+                tenQuest: $("#questOne").val().trim()
+            };
+
+            console.log(userAnswer);
+
+        });
+
+    </script>
 </body>
 
 </html>
