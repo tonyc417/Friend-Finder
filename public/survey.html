@@ -33,22 +33,22 @@
                 <label for="questOne">Question 1</label>
                 <h6>Do you like seafood?</h6>
                 <select class="form-control" id="questOne">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="questTwo">Question 2</label>
                 <h6>Do you like going to the beach?</h6>
                 <select class="form-control" id="questTwo">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
@@ -56,22 +56,22 @@
                 <h6>Do you like traveling?
                 </h6>
                 <select class="form-control" id="questThree">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="questFour">Question 4</label>
                 <h6>Traveling scares you.</h6>
                 <select class="form-control" id="questFour">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
@@ -79,22 +79,22 @@
                 <h6>You don't travel because of money.
                 </h6>
                 <select class="form-control" id="questFive">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="questSix">Question 6</label>
                 <h6>Work stops you from traveling.</h6>
                 <select class="form-control" id="questSix">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
@@ -102,11 +102,11 @@
                 <h6>Would you ever consider moving somewhere else?
                 </h6>
                 <select class="form-control" id="questSeven">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
@@ -114,33 +114,33 @@
                 <h6>Do you feel nervous being on an airplane?
                 </h6>
                 <select class="form-control" id="questEight">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="questNine">Question 9</label>
                 <h6>All you do is work and sleep.</h6>
                 <select class="form-control" id="questNine">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="questTen">Question 10</label>
                 <h6>Airplanes scare you.</h6>
                 <select class="form-control" id="questTen">
-                    <option>1 (Strongly Disagree)</option>
+                    <option value="1">1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <button type="button" id="subQuest" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
@@ -174,10 +174,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="../app/data/friends.js"></script>
     <script type="text/javascript">
+    console.log(resultsArr);
 
         $("#subQuest").on('click', (e) => {
-
 
             var userAnswer = {
                 name: $("#inputName").val().trim(),
@@ -196,9 +197,15 @@
                 ]
             };
 
-               $(".modal-body").append("<p>Meet: " + $("#inputName").val() + "</p>");
+            for (var i = 0; i < userAnswer.length; i++) {
+                console.log(userAnswer.scores[i]);
+            }
 
-            console.log(userAnswer);
+            console.log(userAnswer.scores);
+
+            $(".modal-body").append("<p>Meet: " + $("#inputName").val() + "</p>");
+
+            // console.log(userAnswer);
 
             $.post("/api/data", userAnswer, () => {
                 alert("Sucess!");
@@ -206,6 +213,7 @@
 
 
         });
+
 
     </script>
 </body>
