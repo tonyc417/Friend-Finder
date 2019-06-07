@@ -143,56 +143,66 @@
                     <option>5 (Strongly Agree)</option>
                 </select>
             </div>
-            <button type="button" id="subQuest" class="btn btn-primary btn-lg btn-block">Submit</button>
+            <button type="button" id="subQuest" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                data-target="#loginModal">Submit</button>
         </form>
         <hr>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="loginAccount" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="col-11 modal-title text-center" id="exampleModalLongTitle">You Matched!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
                 </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
+
+
         <a href="/api/data">View Data</a>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script type="text/javascript">
 
         $("#subQuest").on('click', (e) => {
 
-           var userAnswer = {
-               name: $("#inputName").val().trim(),
-               photo: $("#userPhoto").val().trim(),
-               scores: [
-                   $("#questOne").val().trim(),
-                   $("#questTwo").val().trim(),
-                   $("#questThree").val().trim(),
-                   $("#questFour").val().trim(),
-                   $("#questFive").val().trim(),
-                   $("#questSix").val().trim(),
-                   $("#questSeven").val().trim(),
-                   $("#questEight").val().trim(),
-                   $("#questNine").val().trim(),
-                   $("#questTen").val().trim()
-               ]
-           };
+
+            var userAnswer = {
+                name: $("#inputName").val().trim(),
+                photo: $("#userPhoto").val().trim(),
+                scores: [
+                    $("#questOne").val().trim(),
+                    $("#questTwo").val().trim(),
+                    $("#questThree").val().trim(),
+                    $("#questFour").val().trim(),
+                    $("#questFive").val().trim(),
+                    $("#questSix").val().trim(),
+                    $("#questSeven").val().trim(),
+                    $("#questEight").val().trim(),
+                    $("#questNine").val().trim(),
+                    $("#questTen").val().trim()
+                ]
+            };
+
+               $(".modal-body").append("<p>Meet: " + $("#inputName").val() + "</p>");
 
             console.log(userAnswer);
 
-           $.post("/api/data", userAnswer, () => {
-               alert("Sucess!");
-           });
+            $.post("/api/data", userAnswer, () => {
+                alert("Sucess!");
+            });
 
 
         });
