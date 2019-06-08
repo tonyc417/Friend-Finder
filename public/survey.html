@@ -176,7 +176,9 @@
         crossorigin="anonymous"></script>
     <script src="../app/data/friends.js"></script>
     <script type="text/javascript">
-    console.log(resultsArr);
+
+    var newSc = resultsArr.scores.sort();
+    console.log(newSc);
 
         $("#subQuest").on('click', (e) => {
 
@@ -184,24 +186,21 @@
                 name: $("#inputName").val().trim(),
                 photo: $("#userPhoto").val().trim(),
                 scores: [
-                    $("#questOne").val().trim(),
-                    $("#questTwo").val().trim(),
-                    $("#questThree").val().trim(),
-                    $("#questFour").val().trim(),
-                    $("#questFive").val().trim(),
-                    $("#questSix").val().trim(),
-                    $("#questSeven").val().trim(),
-                    $("#questEight").val().trim(),
-                    $("#questNine").val().trim(),
-                    $("#questTen").val().trim()
+                    parseInt($("#questOne").val().trim()),
+                    parseInt($("#questTwo").val().trim()),
+                    parseInt($("#questThree").val().trim()),
+                    parseInt($("#questFour").val().trim()),
+                    parseInt($("#questFive").val().trim()),
+                    parseInt($("#questSix").val().trim()),
+                    parseInt($("#questSeven").val().trim()),
+                    parseInt($("#questEight").val().trim()),
+                    parseInt($("#questNine").val().trim()),
+                    parseInt($("#questTen").val().trim())
                 ]
             };
 
-            for (var i = 0; i < userAnswer.length; i++) {
-                console.log(userAnswer.scores[i]);
-            }
-
-            console.log(userAnswer.scores);
+            var totalSc = userAnswer.scores.reduce();
+            console.log(totalSc);
 
             $(".modal-body").append("<p>Meet: " + $("#inputName").val() + "</p>");
 
